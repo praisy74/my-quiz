@@ -30,7 +30,8 @@ class Questions{
      contestant.ritans+=1
      contestant.questions+=1
      contestant.uppdate()
-
+     //mam here
+          //b.changrColor("green")
      
       }
       else if(a.mousePressed()||c.mousePressed()||d.mousePressed()){

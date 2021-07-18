@@ -37,9 +37,10 @@ class Quiz {
 
     textSize(32);
     text("Game starts , All the best "+contestant.name,200,200);
-    //ques.getQu()
+    ques = new Question
+    ques.getQu()
 
-    Questions.qanda()
+    ques.qanda()
 
     
   //  ques.wroAns()

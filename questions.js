@@ -3,16 +3,21 @@ class Questions{
       
     }
 
-   static getQu(){
-        var quesRef  = database.ref('contestant/questions');
+ /*)static  getQu(){
+  //  var contestantQ="contestants/contestant"+this.index+"questions"
+    
+       var quesRef  = database.ref('contestant/questions');
         quesRef.on("value",function(data){
-           questions = data.val();
+           quest = data.val();
+        })
+        database.ref("contestants/contestant").update({
+          questions:quest
         })
        
-      }
+      }*/
       
- static form1(){
-     
+ static  qanda(){
+     if(contestant.questions===0){
       a=createButton("Snake")
       b=createButton("Parrot")
       c=createButton("Trees")
@@ -23,27 +28,23 @@ class Questions{
       b.position(300,370)
       c.position(400,370)
       d.position(500,370)
-      if(b.mousePressed()){
-      textSize(5)
-      fill("green")
-     text("Correct answer",400,360)
-     contestant.ritans+=1
-     contestant.questions+=1
-     contestant.uppdate()
-     //mam here
-          //b.changrColor("green")
-     
-      }
-      else if(a.mousePressed()||c.mousePressed()||d.mousePressed()){
-     text("Oh! your wrong let's try next one ",400,360)
-          fill("red")
-          contestant.wroans+=1
-          contestant.questions+=1
-          contestant.uppdate()
+      b.mousePressed(()=>
+      contestant.updateRitans(b)
+      
+      )
          
+      
+      if(a.mousePressed()){
+        contestant.updateWroans(a)  
+      }else if(c.mousePressed()){
+        contestant.updateWroans(c)    
       }
-     
+      else if(d.mousePressed()){
+        contestant.updateWroans(d)     
+      }
+
   }
+}
 
 
 
@@ -51,13 +52,26 @@ class Questions{
 
 
 
-  ritAns(){
-    fill("red")
+  ritAns(ob1){
+   // var title=createElement("h4")
+   fill("blue")
+    text("Correct answer",400,360)
+  
+var green=color(21, 190, 52)
+    ob1.style('background-color',green);
+    contestant.ritans+=1
+    quest+=1
+    contestant.uppdate()
+  }
+  wroAns(ob){
+  
+   fill("blue")
 
-    var title=createElement("h4")
-    title.html("Oh! your wrong let's try next one ",400,360)
+     text("Oh! your wrong let's try next one ",400,360)
+    var red=color(232, 0, 35 )
+    ob.style('background-color',red);
     contestant.wroans+=1
-    contestant.questions+=1
+    quest+=1
     contestant.uppdate()
   }
 

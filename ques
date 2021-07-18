@@ -14,9 +14,7 @@ class Quiz {
     });
   }
   async start(){
-    if(gameState===0){
-      contestant= new Contestant
-      contestant.getCount()
+    
       if(gameState === 0){
         contestant = new Contestant();
         var contestantCountRef=await database.ref("contestantCount").once("value")
@@ -29,21 +27,19 @@ class Quiz {
         form = new Form()
         form.display();
   }
-    }
+    
   }
   play(){
 
     form.hide();
 
+    questionand=new Questions
     textSize(32);
     text("Game starts , All the best "+contestant.name,200,200);
-    //ques.getQu()
-
-    Questions.qanda()
-
-    
-  //  ques.wroAns()
-
+    questionand.getQu()
+if(questions===0){
+    questionand.form1()
+}
   }
 
   end(){
@@ -68,3 +64,10 @@ class Quiz {
     }
   }
 }
+
+
+
+
+
+
+

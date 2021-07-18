@@ -31,13 +31,32 @@ class Contestant{
         })
     }
 
-   /* updateRitans(){
-database.ref("contestants/contestant").update({
-    ritans:this.ritans+1
-})
+    updateRitans(ob){
+        fill("blue")
+        text("Correct answer",400,360)
+      
+    var green=color(21, 190, 52)
+        ob.style('background-color',green);
+        this.ritans+=1;
+        this.questions+=1
+        uppdate()
+       
+    
+        }
+        updateWroans(ob1){
+          
+            fill("blue")
 
-    })*/
-
+            text("Oh! your wrong let's try next one ",400,360)
+           var red=color(232, 0, 35 )
+           ob1.style('background-color',red);
+           contestant.wroans+=1
+           questions+=1
+           uppdate()
+           
+        
+            }
+            
    static getContInfo(){
         var contInfo=database.ref("contestants")
         contInfo.on("value",(data)=>{

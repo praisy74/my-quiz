@@ -3,11 +3,12 @@ var canvas, backgroundImage;
 
 var gameState = 0;
 var contestantCount;
-var questions=0;
+var quest=0;
 var database;
 var a,b,c,d,a1,a3,a2,a4,b1,b2,b3,b4,c1,c2,c3,c4,d1,d2,d3,d4
-var form, contestant, quiz;
+var form, contestant, quiz,bk;
 var allcontestants=[]
+
 
 function preload(){
   form1=loadImage("form1.jpg")  
@@ -27,8 +28,8 @@ function setup(){
 
 
 function draw(){
-  background("pink");
-
+  background(form2);
+ 
   
   if(contestantCount===3){
     quiz.update(1)
@@ -37,7 +38,5 @@ function draw(){
     clear();
 quiz.play();
   }
-  if(questions===0&&gameState===1){
-background(form1)
-  }
+  
 }
